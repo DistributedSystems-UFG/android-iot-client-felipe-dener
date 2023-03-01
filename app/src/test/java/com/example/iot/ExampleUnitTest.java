@@ -1,4 +1,4 @@
-package com.example.thermoledmobileclient;
+package com.example.iot;
 
 import org.junit.Test;
 

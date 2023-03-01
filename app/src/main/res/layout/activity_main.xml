@@ -6,73 +6,150 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/port"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="50051"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/host" />
-
-    <Button
-        android:id="@+id/getTempButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
-        android:onClick="sendTemperatureRequest"
-        android:text="Get Temperature"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/port" />
 
     <TextView
-        android:id="@+id/textViewTemperature"
-        android:layout_width="176dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="236dp"
-        android:text="Temperature will show here"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toEndOf="@+id/getTempButton"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/ledOnButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="72dp"
-        android:onClick="ledOnRequest"
-        android:text="Led On"
+        android:id="@+id/login_Label"
+        android:layout_width="173dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="16dp"
+        android:text="IOT"
+        android:textColor="#2196F3"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getTempButton" />
-
-    <Button
-        android:id="@+id/ledOffButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="348dp"
-        android:onClick="ledOffRequest"
-        android:text="Led Off"
-        app:layout_constraintStart_toEndOf="@+id/ledOnButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/host"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/login_Label2"
+        android:layout_width="281dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="340dp"
+        android:text="Controles WEB"
+        android:textColor="#2196F3"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Temperatura_Label"
+        android:layout_width="151dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
+        android:text="Temperatura"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Red_Led_Label"
+        android:layout_width="167dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="160dp"
+        android:text="Led Vermelho"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/Green_Led_Label"
+        android:layout_width="167dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="236dp"
+        android:text="Led Verde"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/EditTextTemperatura"
+        android:layout_width="91dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginTop="88dp"
+        android:text="00.00"
+        android:textColor="#F44336"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/RedLedToggle"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="34.136.25.200"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="ToggleButton"
+        app:layout_constraintStart_toEndOf="@+id/Red_Led_Label"
+        app:layout_constraintTop_toBottomOf="@+id/EditTextTemperatura" />
+
+    <ToggleButton
+        android:id="@+id/GreenLedToggle"
+        android:layout_width="83dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
+        android:text="ToggleButton"
+        app:layout_constraintStart_toEndOf="@+id/Green_Led_Label"
+        app:layout_constraintTop_toBottomOf="@+id/EditTextTemperatura" />
+
+    <TextView
+        android:id="@+id/LedStateText"
+        android:layout_width="327dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:textColor="#ED1414"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/PresentationBtn"
+        android:layout_width="361dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="#FF5722"
+        android:checked="false"
+        android:text="ToggleButton"
+        android:textColor="#FFFFFF"
+        android:textOff="MODO APRESENTAÇÂO"
+        android:textOn="FECHAR APRESENTAÇÂO"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/HomeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="276dp"
+        android:text="Home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/LightSensorBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="216dp"
+        android:text="Sensor de Luz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/TempSensorBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginBottom="152dp"
+        android:text="Sensor de Temperatura"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
